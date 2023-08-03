@@ -1,0 +1,29 @@
+{
+    "folders": [
+		
+		{
+			"name": "application 1",
+			"path": "app1"
+		},
+		{
+			"name": "application 2",
+			"path": "app2"
+		},
+		{
+			"name": "common",
+			"path": "common"
+		},
+		{
+			"name": "root",
+			"path": "."
+		}
+		
+	],
+	"settings": {
+		"files.exclude": {
+			"app1": true,
+			"app2": true,
+			"common": true,
+		},
+	}
+}
