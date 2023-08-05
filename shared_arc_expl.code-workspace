@@ -2,28 +2,111 @@
     "folders": [
 		
 		{
-			"name": "application 1",
+			"name": "Application 1",
 			"path": "app1"
 		},
 		{
-			"name": "application 2",
+			"name": "Application 2",
 			"path": "app2"
 		},
 		{
-			"name": "common",
+			"name": "Common",
 			"path": "common"
 		},
 		{
-			"name": "root",
+			"name": "Root",
 			"path": "."
 		}
 		
 	],
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "App 1: Device (Debug)",
+				"request": "launch",
+				"type": "dart",
+				"cwd": "${workspaceFolder:Application 1}",
+				"program": "lib/main.dart",
+				"flutterMode": "debug",
+				"args": [
+					"--dart-define=LOCAL=true",
+					"--debug"
+				]
+			},
+			{
+				"name": "App 2: Device (Debug)",
+				"request": "launch",
+				"type": "dart",
+				"cwd": "${workspaceFolder:Application 2}",
+				"program": "lib/main.dart",
+				"flutterMode": "debug",
+				"args": [
+					"--dart-define=LOCAL=true",
+					"--debug"
+				]
+			},
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Application 1: build",
+				"command": "dart run build_runner build --delete-conflicting-outputs",
+				"type": "shell",
+				"options": {
+					"cwd": "${workspaceFolder:Application 1}"
+				},
+				"args": [],
+				"problemMatcher": [
+					"$tsc"
+				],
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": "build"
+			},
+			{
+				"label": "Application 2: build",
+				"command": "dart run build_runner build --delete-conflicting-outputs",
+				"type": "shell",
+				"options": {
+					"cwd": "${workspaceFolder:Application 2}"
+				},
+				"args": [],
+				"problemMatcher": [
+					"$tsc"
+				],
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": "build"
+			},
+			{
+				"label": "Common: build",
+				"command": "dart run build_runner build --delete-conflicting-outputs",
+				"type": "shell",
+				"options": {
+					"cwd": "${workspaceFolder:Common}"
+				},
+				"args": [],
+				"problemMatcher": [
+					"$tsc"
+				],
+				"presentation": {
+					"reveal": "always"
+				},
+				"group": "build"
+			}
+		]
+	},
+
 	"settings": {
 		"files.exclude": {
 			"app1": true,
 			"app2": true,
 			"common": true,
 		},
-	}
+	},
 }
